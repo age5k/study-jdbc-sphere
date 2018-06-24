@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Appenders>
+		<Console name="STDOUT" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="[%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ}] [%-5p] [%t] %C{10} (%F:%L) - %m%n" />
+		</Console>
+		<!-- ${sys:openstock.data.dir} -->
+		<RollingFile name="FILE"
+			fileName="target/jdbcsphere.log" filePattern="yyyyMMddHHmmssSSS" bufferedIO="false" bufferSize="0">
+			<PatternLayout
+				charset="UTF-8"
+				pattern="[%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ}] [%-5p] [%t] %C{10} (%F:%L) - %m%n" />
+			<CronTriggeringPolicy />
+			
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<Logger name="x" level="trace" />		
+		<Root level="info">
+			<AppenderRef ref="STDOUT" />
+			<AppenderRef ref="FILE" />
+		</Root>
+	</Loggers>
+</Configuration>
