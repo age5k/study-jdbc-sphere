@@ -13,18 +13,23 @@
 	<properties>
 		<log4j.version>2.5</log4j.version>
 		<junit.version>4.12</junit.version>
-		<sharding-jdbc.version>3.0.0.M1</sharding-jdbc.version>
+		<sharding-sphere.version>3.0.0.M1</sharding-sphere.version>
 		<commons-dbcp2.version>2.4.0</commons-dbcp2.version>
 		<postgresql.version>42.2.2</postgresql.version>
 	</properties>
 
 
 	<dependencies>
-	
+
 		<dependency>
 			<groupId>io.shardingsphere</groupId>
 			<artifactId>sharding-jdbc</artifactId>
-			<version>${sharding-jdbc.version}</version>
+			<version>${sharding-sphere.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.shardingsphere</groupId>
+			<artifactId>sharding-jdbc-transaction</artifactId>
+			<version>${sharding-sphere.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
